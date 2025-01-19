@@ -4,20 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7292a758-6c11-422d-bff9-4329254f215d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto_Final_POO.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/catalogo.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/catalogo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/login.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/productos.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/productos.java" afterDir="false" />
+    <list default="true" id="7292a758-6c11-422d-bff9-4329254f215d" name="Changes" comment="Primer commit">
+      <change afterPath="$PROJECT_DIR$/src/carrito.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/carrito.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/productos.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/productos.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/productos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/productos.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +26,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;GabrielEsc23&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/GabrielEsc23/Proyecto_Final_POO.git&quot;,
+    &quot;accountId&quot;: &quot;dd146021-00bf-405e-a1e2-f7aebb45ab66&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -81,11 +85,41 @@
       <workItem from="1736898940043" duration="2867000" />
       <workItem from="1736947624559" duration="10095000" />
       <workItem from="1736978271357" duration="13425000" />
-      <workItem from="1737072401580" duration="4926000" />
+      <workItem from="1737072401580" duration="6118000" />
+      <workItem from="1737310068381" duration="8419000" />
     </task>
+    <task id="LOCAL-00001" summary="Primer commit">
+      <option name="closed" value="true" />
+      <created>1737080756058</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1737080756058</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Primer commit">
+      <option name="closed" value="true" />
+      <created>1737080792561</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1737080792561</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Primer commit">
+      <option name="closed" value="true" />
+      <created>1737080848977</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1737080848977</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Primer commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Primer commit" />
   </component>
 </project>

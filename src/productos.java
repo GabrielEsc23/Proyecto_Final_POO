@@ -1,12 +1,9 @@
-import java.awt.Image;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 
 public class productos {
     public JPanel mainPanel;
@@ -26,15 +23,55 @@ public class productos {
     private JLabel precio_5;
     private JLabel img_5;
     private JButton btnCargar;
+    private JButton agregar_product1;
+    private JButton agregar_product2;
+    private JButton agregar_product3;
+    private JButton agregar_product4;
+    private JButton agregar_product5;
+    private JButton verCarritoButton;
+
+    // Lista para almacenar los productos del carrito
+    private ArrayList<String> carritoProductos = new ArrayList<>();
+    private ArrayList<Double> carritoPrecios = new ArrayList<>();
 
     public productos() {
-        // Acción del botón "Cargar"
+        // Cargar datos desde la base de datos
         btnCargar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                cargarDatosDesdeBD(); // Llamar al método cargarDatosDesdeBD
+                cargarDatosDesdeBD();
             }
         });
+
+        // Agregar acciones a los botones "Agregar al carrito"
+        agregar_product1.addActionListener(e -> agregarAlCarrito(nombre_1.getText(), precio_1.getText()));
+        agregar_product2.addActionListener(e -> agregarAlCarrito(nombre_2.getText(), precio_2.getText()));
+        agregar_product3.addActionListener(e -> agregarAlCarrito(nombre_3.getText(), precio_3.getText()));
+        agregar_product4.addActionListener(e -> agregarAlCarrito(nombre_4.getText(), precio_4.getText()));
+        agregar_product5.addActionListener(e -> agregarAlCarrito(nombre_5.getText(), precio_5.getText()));
+
+        // Acción del botón "Ver carrito"
+        verCarritoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mostrarCarrito();
+            }
+        });
+    }
+
+    private void agregarAlCarrito(String producto, String precio) {
+        carritoProductos.add(producto);
+        carritoPrecios.add(Double.parseDouble(precio.replace("Precio: $", ""))); // Extraer el valor numérico del precio
+        JOptionPane.showMessageDialog(mainPanel, "Producto agregado al carrito: " + producto);
+    }
+
+    private void mostrarCarrito() {
+        // Crear una nueva ventana de tipo "carrito"
+        JFrame carritoFrame = new JFrame("Carrito de compras");
+        carritoFrame.setContentPane(new carrito(carritoProductos,carritoPrecios).mainPanel);
+
+        carritoFrame.setSize(700, 300);
+        carritoFrame.setVisible(true);
     }
 
     private void cargarDatosDesdeBD() {
