@@ -15,11 +15,17 @@ public class carrito {
     private void cargarDatosCarrito(ArrayList<String> productos, ArrayList<Double> precios) {
         StringBuilder productosTexto = new StringBuilder();
         StringBuilder preciosTexto = new StringBuilder();
+        double subtotal = 0.0;
 
+        // Construir las cadenas de texto para productos y precios
         for (int i = 0; i < productos.size(); i++) {
             productosTexto.append(productos.get(i)).append("\n"); // Agregar salto de línea
             preciosTexto.append("$").append(precios.get(i)).append("\n");
+            subtotal += precios.get(i); // Sumar los precios
         }
+
+        // Agregar el subtotal al final del área de precios
+        preciosTexto.append("\nSubtotal: $").append(subtotal);
 
         // Establecer los textos en los JTextArea
         mostrar_productos.setText(productosTexto.toString());
