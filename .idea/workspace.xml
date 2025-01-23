@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7292a758-6c11-422d-bff9-4329254f215d" name="Changes" comment="Agregue el carrito de compras">
-      <change afterPath="$PROJECT_DIR$/src/crud.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/crud.java" afterDir="false" />
+    <list default="true" id="7292a758-6c11-422d-bff9-4329254f215d" name="Changes" comment="Agregue el metodo crud,modifique productos.java para que sea mas dinamico y no tener que poner un jlabel vacio cada vez que quiera agregar un nuevo producto, y cambie el lugar donde se guardan las  rutas de las imagenes, ahora ya no estan en el codigo, ahora se almacena dentro de la base de datos.">
+      <change afterPath="$PROJECT_DIR$/src/pagos.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pagos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/carrito.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/carrito.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/carrito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/carrito.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/login.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/login.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/login.java" afterDir="false" />
@@ -90,7 +92,10 @@
       <workItem from="1736978271357" duration="13425000" />
       <workItem from="1737072401580" duration="6118000" />
       <workItem from="1737310068381" duration="8536000" />
-      <workItem from="1737416641355" duration="9225000" />
+      <workItem from="1737416641355" duration="9769000" />
+      <workItem from="1737474880263" duration="7560000" />
+      <workItem from="1737552753778" duration="666000" />
+      <workItem from="1737649416765" duration="5734000" />
     </task>
     <task id="LOCAL-00001" summary="Primer commit">
       <option name="closed" value="true" />
@@ -124,7 +129,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737318965062</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Agregue el metodo crud,modifique productos.java para que sea mas dinamico y no tener que poner un jlabel vacio cada vez que quiera agregar un nuevo producto, y cambie el lugar donde se guardan las  rutas de las imagenes, ahora ya no estan en el codigo, ahora se almacena dentro de la base de datos.">
+      <option name="closed" value="true" />
+      <created>1737426444328</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1737426444328</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +146,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Primer commit" />
     <MESSAGE value="Agregue el carrito de compras" />
-    <option name="LAST_COMMIT_MESSAGE" value="Agregue el carrito de compras" />
+    <MESSAGE value="Agregue el metodo crud,modifique productos.java para que sea mas dinamico y no tener que poner un jlabel vacio cada vez que quiera agregar un nuevo producto, y cambie el lugar donde se guardan las  rutas de las imagenes, ahora ya no estan en el codigo, ahora se almacena dentro de la base de datos." />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregue el metodo crud,modifique productos.java para que sea mas dinamico y no tener que poner un jlabel vacio cada vez que quiera agregar un nuevo producto, y cambie el lugar donde se guardan las  rutas de las imagenes, ahora ya no estan en el codigo, ahora se almacena dentro de la base de datos." />
   </component>
 </project>

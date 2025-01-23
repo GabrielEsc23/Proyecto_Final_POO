@@ -5,10 +5,14 @@ public class carrito {
     public JPanel mainPanel;
     private JTextArea mostrar_productos;
     private JTextArea mostrar_precio;
+    private JButton irAPagarButton;
 
     // Constructor para inicializar el carrito
     public carrito(ArrayList<String> productos, ArrayList<Double> precios) {
         cargarDatosCarrito(productos, precios);
+
+        // Acción del botón "Ir a Pagar"
+        irAPagarButton.addActionListener(e -> abrirPagos(productos, precios));
     }
 
     // Método para cargar los datos del carrito
@@ -24,8 +28,9 @@ public class carrito {
             subtotal += precios.get(i); // Sumar los precios
         }
 
+
         // Agregar el subtotal al final del área de precios
-        preciosTexto.append("\nSubtotal: $").append(subtotal);
+        preciosTexto.append("\nSubtotal: $").append(String.format("%.2f", subtotal));
 
         // Establecer los textos en los JTextArea
         mostrar_productos.setText(productosTexto.toString());
@@ -34,5 +39,13 @@ public class carrito {
         // Hacer los JTextArea no editables
         mostrar_productos.setEditable(false);
         mostrar_precio.setEditable(false);
+    }
+
+    // Método para abrir la ventana de pagos
+    private void abrirPagos(ArrayList<String> productos, ArrayList<Double> precios) {
+        JFrame pagosFrame = new JFrame("Pago");
+        pagosFrame.setContentPane(new pagos(productos, precios).mainPanel);
+        pagosFrame.setSize(600, 400);
+        pagosFrame.setVisible(true);
     }
 }

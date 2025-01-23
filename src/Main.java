@@ -10,7 +10,7 @@ public class Main {
         frame.setSize(900, 1000);
         frame.setPreferredSize(new Dimension(900, 1000));
         frame.setVisible(true);
-        frame.setContentPane(new productos().mainPanel);
+        frame.setContentPane(new login().mainPanel);
         }
 
     }
