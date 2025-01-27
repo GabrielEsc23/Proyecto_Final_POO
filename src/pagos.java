@@ -16,6 +16,7 @@ public class pagos {
     // Constructor para inicializar la ventana de pagos
     public pagos(ArrayList<String> productos, ArrayList<Double> precios) {
         cargarDatosPago(productos, precios);
+        agregarValidacionBotonPagar();
     }
 
     // Método para cargar los datos en la interfaz de pagos
@@ -39,8 +40,6 @@ public class pagos {
         preciosTexto.append("\nIVA (15%): $").append(String.format("%.2f", iva));
         preciosTexto.append("\nTotal (con IVA): $").append(String.format("%.2f", totalConIva));
 
-
-
         // Establecer los textos en los JTextArea
         mostrar_productos2.setText(productosTexto.toString());
         mostrar_precio2.setText(preciosTexto.toString());
@@ -48,5 +47,35 @@ public class pagos {
         // Hacer los JTextArea no editables
         mostrar_productos2.setEditable(false);
         mostrar_precio2.setEditable(false);
+    }
+
+    // Método para agregar la validación del botón "Pagar"
+    private void agregarValidacionBotonPagar() {
+        pagarButton.addActionListener(e -> {
+            // Verificar si alguno de los campos está vacío
+            if (nombre_factura.getText().isEmpty() ||
+                    num_cedula.getText().isEmpty() ||
+                    num_tarjeta.getText().isEmpty() ||
+                    nombre_titular.getText().isEmpty() ||
+                    num_cvv.getText().isEmpty() ||
+                    fecha_vencimiento.getText().isEmpty()) {
+
+                // Mostrar un mensaje de advertencia
+                JOptionPane.showMessageDialog(
+                        null,
+                        "Por favor, llene todos los campos antes de proceder con el pago.",
+                        "Campos incompletos",
+                        JOptionPane.WARNING_MESSAGE
+                );
+            } else {
+                // Aquí puedes agregar el código para realizar el pago
+                JOptionPane.showMessageDialog(
+                        null,
+                        "Pago realizado con éxito.",
+                        "Pago",
+                        JOptionPane.INFORMATION_MESSAGE
+                );
+            }
+        });
     }
 }
