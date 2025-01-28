@@ -17,5 +17,7 @@
         <jarDirectory url="file://$MODULE_DIR$/driver-connector" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="itextpdf.forms" level="project" />
+    <orderEntry type="library" name="lowagie.itext" level="project" />
   </component>
 </module>

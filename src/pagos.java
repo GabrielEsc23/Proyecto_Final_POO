@@ -1,4 +1,10 @@
+import com.lowagie.text.Document;
+import com.lowagie.text.DocumentException;
+import com.lowagie.text.Paragraph;
+import com.lowagie.text.pdf.PdfWriter;
+
 import javax.swing.*;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 
 public class pagos {
@@ -91,17 +97,44 @@ public class pagos {
 
         // Agregar un ActionListener al botón "Imprimir"
         imprimirButton.addActionListener(e -> {
-            // Simular la acción de imprimir la factura
-            JOptionPane.showMessageDialog(
-                    null,
-                    "Imprimiendo la factura...\n" +
-                            "Factura para: " + nombre_factura.getText() + "\n" +
-                            "Con número de cedula: " + num_cedula.getText() + "\n" +
-                            mostrar_productos2.getText() + "\n" +
-                            mostrar_precio2.getText(),
-                    "Factura",
-                    JOptionPane.INFORMATION_MESSAGE
-            );
+            try {
+                // Crear el archivo PDF
+                String rutaArchivo = "Factura_" + nombre_factura.getText().replace(" ", "_") + ".pdf";
+                Document documento = new Document();
+                PdfWriter.getInstance(documento, new FileOutputStream(rutaArchivo));
+
+                // Abrir el documento para escribir en él
+                documento.open();
+
+                // Agregar contenido al documento
+                documento.add(new Paragraph("Factura"));
+                documento.add(new Paragraph("------------------------------"));
+                documento.add(new Paragraph("Nombre: " + nombre_factura.getText()));
+                documento.add(new Paragraph("Número de cédula: " + num_cedula.getText()));
+                documento.add(new Paragraph("------------------------------"));
+                documento.add(new Paragraph("Productos:\n" + mostrar_productos2.getText()));
+                documento.add(new Paragraph("------------------------------"));
+                documento.add(new Paragraph("Precios:\n" + mostrar_precio2.getText()));
+                documento.add(new Paragraph("------------------------------"));
+
+                // Cerrar el documento
+                documento.close();
+
+                // Mostrar mensaje de éxito
+                JOptionPane.showMessageDialog(
+                        null,
+                        "Factura guardada como PDF en: " + rutaArchivo,
+                        "Éxito",
+                        JOptionPane.INFORMATION_MESSAGE
+                );
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(
+                        null,
+                        "Error al generar el PDF: " + ex.getMessage(),
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE
+                );
+            }
         });
     }
 }
