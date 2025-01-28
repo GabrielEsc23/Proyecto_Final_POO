@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7292a758-6c11-422d-bff9-4329254f215d" name="Changes" comment="Aguregue la pestaña de porcesamiento de pagos">
+    <list default="true" id="7292a758-6c11-422d-bff9-4329254f215d" name="Changes" comment="Se agreegó un mensaje cuando el cliente termina de pagar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pagos.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/pagos.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pagos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pagos.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +89,8 @@
       <workItem from="1737474880263" duration="7560000" />
       <workItem from="1737552753778" duration="666000" />
       <workItem from="1737649416765" duration="6200000" />
-      <workItem from="1737939115624" duration="1490000" />
+      <workItem from="1737939115624" duration="3454000" />
+      <workItem from="1738025586318" duration="327000" />
     </task>
     <task id="LOCAL-00001" summary="Primer commit">
       <option name="closed" value="true" />
@@ -138,7 +140,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737655559108</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Se agreegó un mensaje cuando el cliente termina de pagar">
+      <option name="closed" value="true" />
+      <created>1737940807102</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1737940807102</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +159,7 @@
     <MESSAGE value="Agregue el carrito de compras" />
     <MESSAGE value="Agregue el metodo crud,modifique productos.java para que sea mas dinamico y no tener que poner un jlabel vacio cada vez que quiera agregar un nuevo producto, y cambie el lugar donde se guardan las  rutas de las imagenes, ahora ya no estan en el codigo, ahora se almacena dentro de la base de datos." />
     <MESSAGE value="Aguregue la pestaña de porcesamiento de pagos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aguregue la pestaña de porcesamiento de pagos" />
+    <MESSAGE value="Se agreegó un mensaje cuando el cliente termina de pagar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se agreegó un mensaje cuando el cliente termina de pagar" />
   </component>
 </project>

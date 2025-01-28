@@ -12,11 +12,13 @@ public class pagos {
     private JTextArea mostrar_productos2;
     private JTextArea mostrar_precio2;
     private JButton pagarButton;
+    private JButton imprimirButton; // Botón para imprimir la factura
 
     // Constructor para inicializar la ventana de pagos
     public pagos(ArrayList<String> productos, ArrayList<Double> precios) {
         cargarDatosPago(productos, precios);
         agregarValidacionBotonPagar();
+        configurarBotonImprimir(); // Configurar el botón de imprimir
     }
 
     // Método para cargar los datos en la interfaz de pagos
@@ -27,10 +29,11 @@ public class pagos {
 
         // Construir las cadenas de texto para productos y precios
         for (int i = 0; i < productos.size(); i++) {
-            productosTexto.append(productos.get(i)).append("\n"); // Agregar salto de línea
+            productosTexto.append(productos.get(i)).append("\n");
             preciosTexto.append("$").append(precios.get(i)).append("\n");
-            subtotal += precios.get(i); // Sumar los precios
+            subtotal += precios.get(i);
         }
+
         // Calcular el IVA (15%) y el total con IVA
         double iva = subtotal * 0.15;
         double totalConIva = subtotal + iva;
@@ -68,14 +71,37 @@ public class pagos {
                         JOptionPane.WARNING_MESSAGE
                 );
             } else {
-                // Aquí puedes agregar el código para realizar el pago
+                // Mostrar mensaje de éxito en el pago
                 JOptionPane.showMessageDialog(
                         null,
                         "Pago realizado con éxito.",
                         "Pago",
                         JOptionPane.INFORMATION_MESSAGE
                 );
+
+                // Habilitar el botón de imprimir
+                imprimirButton.setEnabled(true);
             }
+        });
+    }
+
+    // Método para configurar el botón "Imprimir"
+    private void configurarBotonImprimir() {
+        imprimirButton.setEnabled(false); // Deshabilitado al inicio
+
+        // Agregar un ActionListener al botón "Imprimir"
+        imprimirButton.addActionListener(e -> {
+            // Simular la acción de imprimir la factura
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Imprimiendo la factura...\n" +
+                            "Factura para: " + nombre_factura.getText() + "\n" +
+                            "Con número de cedula: " + num_cedula.getText() + "\n" +
+                            mostrar_productos2.getText() + "\n" +
+                            mostrar_precio2.getText(),
+                    "Factura",
+                    JOptionPane.INFORMATION_MESSAGE
+            );
         });
     }
 }
