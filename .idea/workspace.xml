@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7292a758-6c11-422d-bff9-4329254f215d" name="Changes" comment="Mejora en la interfaz de pagos">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto_Final_POO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto_Final_POO.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pagos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pagos.java" afterDir="false" />
-    </list>
+    <list default="true" id="7292a758-6c11-422d-bff9-4329254f215d" name="Changes" comment="Se agrega impresion en PDF de la factura" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,7 +91,7 @@
       <workItem from="1737649416765" duration="6200000" />
       <workItem from="1737939115624" duration="3454000" />
       <workItem from="1738025586318" duration="878000" />
-      <workItem from="1738071152319" duration="2451000" />
+      <workItem from="1738071152319" duration="2874000" />
     </task>
     <task id="LOCAL-00001" summary="Primer commit">
       <option name="closed" value="true" />
@@ -161,7 +157,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738026437493</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Se agrega impresion en PDF de la factura">
+      <option name="closed" value="true" />
+      <created>1738074029138</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1738074029138</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,6 +178,7 @@
     <MESSAGE value="Aguregue la pestaña de porcesamiento de pagos" />
     <MESSAGE value="Se agreegó un mensaje cuando el cliente termina de pagar" />
     <MESSAGE value="Mejora en la interfaz de pagos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mejora en la interfaz de pagos" />
+    <MESSAGE value="Se agrega impresion en PDF de la factura" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se agrega impresion en PDF de la factura" />
   </component>
 </project>
