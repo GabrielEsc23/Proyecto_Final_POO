@@ -16,7 +16,7 @@ public class login {
         // Acción del botón "Ingresar"
         ingresar_button.addActionListener(e -> {
             String email = txt_email.getText();
-            String password = new String(txt_contra.getText());
+            String password = txt_contra.getText();
             String tipoUsuario = (String) txt_tipo_user.getSelectedItem();
 
             if (validarCredenciales(email, password, tipoUsuario)) {
