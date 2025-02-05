@@ -11,5 +11,4 @@ public class Main {
         frame.setVisible(true);
         frame.setContentPane(new login().mainPanel);
         }
-
     }

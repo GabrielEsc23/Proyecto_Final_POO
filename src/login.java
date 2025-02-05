@@ -1,18 +1,25 @@
 import javax.swing.*;
-import java.awt.*;
 import java.sql.*;
 
+/**
+ * Clase que representa la pantalla de inicio de sesión de la aplicación.
+ */
 public class login {
+    /** Panel principal de la interfaz gráfica. */
     public JPanel mainPanel;
+    /** Campo de texto para ingresar el correo electrónico. */
     private JTextField txt_email;
-    private JTextField txt_contra;
+    /** Campo de contraseña para ingresar la clave. */
+    private JPasswordField txt_contra;
+    /** ComboBox para seleccionar el tipo de usuario. */
     private JComboBox<String> txt_tipo_user;
+    /** Botón para iniciar sesión. */
     private JButton ingresar_button;
 
+    /**
+     * Constructor de la clase login. Configura la interfaz y los eventos de los botones.
+     */
     public login() {
-        // Configurar JComboBox con los tipos de usuario disponibles
-
-
         // Acción del botón "Ingresar"
         ingresar_button.addActionListener(e -> {
             String email = txt_email.getText();
@@ -37,6 +44,14 @@ public class login {
         });
     }
 
+    /**
+     * Valida las credenciales del usuario comparándolas con la base de datos.
+     *
+     * @param email       Correo electrónico del usuario.
+     * @param password    Contraseña del usuario.
+     * @param tipoUsuario Tipo de usuario (por ejemplo, "Administrador" o "Cliente").
+     * @return true si las credenciales son válidas, false en caso contrario.
+     */
     private boolean validarCredenciales(String email, String password, String tipoUsuario) {
         String url = "jdbc:mysql://localhost:3306/smart_shop"; // Cambia a tu base de datos
         String user = "root"; // Cambia a tu usuario

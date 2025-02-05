@@ -3,6 +3,10 @@ import java.awt.*;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * Clase que representa la ventana de productos en la aplicación.
+ * Muestra los productos disponibles y permite al usuario agregar productos al carrito.
+ */
 public class productos {
     public JPanel mainPanel;
     private JButton verCarritoButton;
@@ -11,62 +15,55 @@ public class productos {
     private ArrayList<Double> carritoPrecios = new ArrayList<>();
     private JPanel productosPanel; // Panel donde se mostrarán los productos
 
+    /**
+     * Constructor de la clase productos.
+     * @param tipoUsuario Tipo de usuario (determina si se muestra el botón CRUD).
+     */
     public productos(String tipoUsuario) {
-        // Inicializar productosPanel
         productosPanel = new JPanel();
         productosPanel.setLayout(new BoxLayout(productosPanel, BoxLayout.Y_AXIS));
 
-        // Crear botones
         verCarritoButton = new JButton("Ver carrito");
         crud_button = new JButton("CRUD");
 
-        // Panel para botones
         JPanel botonesPanel = new JPanel();
         botonesPanel.setLayout(new FlowLayout());
         botonesPanel.add(verCarritoButton);
 
-        // Mostrar el botón CRUD solo para administradores
         if ("administrador".equals(tipoUsuario)) {
             botonesPanel.add(crud_button);
         }
 
-        // Configurar el mainPanel
         mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout());
         mainPanel.add(new JScrollPane(productosPanel), BorderLayout.CENTER);
         mainPanel.add(botonesPanel, BorderLayout.SOUTH);
 
-        // Cargar productos desde la base de datos
         cargarDatosDesdeBD();
 
-        // Acción del botón "Ver carrito"
         verCarritoButton.addActionListener(e -> mostrarCarrito());
-
-        // Acción del botón "CRUD"
         crud_button.addActionListener(e -> mostrarMenuCrud());
     }
 
+    /**
+     * Carga los productos desde la base de datos y los muestra en la interfaz gráfica.
+     */
     private void cargarDatosDesdeBD() {
-        String url = "jdbc:mysql://localhost:3306/smart_shop"; // Cambia a tu base de datos
-        String user = "root"; // Cambia a tu usuario
-        String password = ""; // Cambia a tu contraseña
+        String url = "jdbc:mysql://localhost:3306/smart_shop";
+        String user = "root";
+        String password = "";
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
 
         try {
-            // Conexión a la base de datos
             con = DriverManager.getConnection(url, user, password);
-
-            // Consulta para obtener productos
             String query = "SELECT id, nombre, precio, imagen FROM productos";
             ps = con.prepareStatement(query);
             rs = ps.executeQuery();
 
-            // Recorrer los resultados
             while (rs.next()) {
                 JPanel productoPanel = new JPanel(new FlowLayout());
-
                 String nombre = rs.getString("nombre");
                 String precio = "$" + rs.getDouble("precio");
                 String rutaImagen = rs.getString("imagen");
@@ -75,7 +72,6 @@ public class productos {
                 JLabel precioLabel = new JLabel("Precio: " + precio);
                 JLabel imgLabel = new JLabel();
 
-                // Cargar imagen
                 if (rutaImagen != null) {
                     ImageIcon imageIcon = new ImageIcon(rutaImagen);
                     Image image = imageIcon.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
@@ -89,13 +85,11 @@ public class productos {
                 productoPanel.add(precioLabel);
                 productoPanel.add(imgLabel);
                 productoPanel.add(agregarButton);
-
                 productosPanel.add(productoPanel);
             }
 
             productosPanel.revalidate();
             productosPanel.repaint();
-
         } catch (SQLException ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(mainPanel, "Error al cargar productos.");
@@ -110,23 +104,34 @@ public class productos {
         }
     }
 
+    /**
+     * Agrega un producto al carrito de compras.
+     * @param producto Nombre del producto a agregar.
+     * @param precio Precio del producto en formato String.
+     */
     private void agregarAlCarrito(String producto, String precio) {
         carritoProductos.add(producto);
         carritoPrecios.add(Double.parseDouble(precio.replace("$", "")));
         JOptionPane.showMessageDialog(mainPanel, "Producto agregado al carrito: " + producto);
     }
 
+    /**
+     * Muestra la ventana del carrito de compras.
+     */
     private void mostrarCarrito() {
         JFrame carritoFrame = new JFrame("Carrito de compras");
         carritoFrame.setContentPane(new carrito(carritoProductos, carritoPrecios).mainPanel);
-        carritoFrame.setSize(700, 300);
+        carritoFrame.setSize(600, 300);
         carritoFrame.setVisible(true);
     }
 
+    /**
+     * Muestra el menú CRUD para administrar los productos.
+     */
     private void mostrarMenuCrud() {
         JFrame crudFrame = new JFrame("Menú CRUD");
         crudFrame.setContentPane(new crud().mainPanel);
-        crudFrame.setSize(400, 400);
+        crudFrame.setSize(600, 400);
         crudFrame.setVisible(true);
     }
 }

@@ -6,6 +6,9 @@ import javax.swing.*;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 
+/**
+ * Clase que gestiona el proceso de pago en la aplicación.
+ */
 public class pagos {
     public JPanel mainPanel;
     private JTextField nombre_factura;
@@ -23,7 +26,11 @@ public class pagos {
     private ArrayList<String> productos;
     private ArrayList<Double> precios;
 
-    // Constructor
+    /**
+     * Constructor de la clase pagos.
+     * @param productos Lista de productos en el carrito.
+     * @param precios Lista de precios de los productos en el carrito.
+     */
     public pagos(ArrayList<String> productos, ArrayList<Double> precios) {
         this.productos = productos;
         this.precios = precios;
@@ -38,7 +45,9 @@ public class pagos {
         }
     }
 
-    // Cargar datos de productos y precios
+    /**
+     * Carga los productos y precios en los campos de texto.
+     */
     private void cargarDatosPago() {
         StringBuilder productosTexto = new StringBuilder();
         StringBuilder preciosTexto = new StringBuilder();
@@ -64,7 +73,9 @@ public class pagos {
         mostrar_precio2.setEditable(false);
     }
 
-    // Validar pago
+    /**
+     * Agrega validación al botón de pago para asegurarse de que los campos estén llenos.
+     */
     private void agregarValidacionBotonPagar() {
         pagarButton.addActionListener(e -> {
             if (nombre_factura.getText().isEmpty() ||
@@ -92,7 +103,9 @@ public class pagos {
         });
     }
 
-    // Configurar impresión de factura
+    /**
+     * Configura la funcionalidad del botón de impresión para generar una factura en PDF.
+     */
     private void configurarBotonImprimir() {
         imprimirButton.setEnabled(false);
         imprimirButton.addActionListener(e -> {
@@ -131,7 +144,9 @@ public class pagos {
         });
     }
 
-    // Método para cerrar la ventana de pagos y volver al carrito
+    /**
+     * Cierra la ventana de pago y regresa al carrito.
+     */
     private void cerrarVentana() {
         JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(mainPanel);
         if (frame != null) {

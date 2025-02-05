@@ -1,16 +1,32 @@
 import javax.swing.*;
 import java.util.ArrayList;
 
+/**
+ * Clase que representa la interfaz del carrito de compras.
+ */
 public class carrito {
+    /** Panel principal de la interfaz gráfica. */
     public JPanel mainPanel;
+    /** Lista que muestra los productos agregados al carrito. */
     private JList<String> listaProductos;
+    /** Área de texto que muestra los precios de los productos y el subtotal. */
     private JTextArea mostrar_precio;
+    /** Botón para proceder al pago. */
     private JButton irAPagarButton;
+    /** Botón para quitar un producto del carrito. */
     private JButton quitarProductoButton;
+    /** Botón para regresar a la pantalla anterior. */
     private JButton regresarButton;
+    /** Modelo de lista para gestionar los productos en el carrito. */
     private DefaultListModel<String> modeloLista;
 
-    // Constructor
+    /**
+     * Constructor de la clase carrito.
+     * Inicializa la interfaz y carga los productos y precios en la lista.
+     *
+     * @param productos Lista de nombres de los productos en el carrito.
+     * @param precios   Lista de precios de los productos en el carrito.
+     */
     public carrito(ArrayList<String> productos, ArrayList<Double> precios) {
         modeloLista = new DefaultListModel<>();
         listaProductos.setModel(modeloLista);
@@ -31,7 +47,12 @@ public class carrito {
         }
     }
 
-    // Cargar datos en la lista del carrito
+    /**
+     * Carga los productos y precios en la lista del carrito.
+     *
+     * @param productos Lista de productos en el carrito.
+     * @param precios   Lista de precios de los productos.
+     */
     private void cargarDatosCarrito(ArrayList<String> productos, ArrayList<Double> precios) {
         modeloLista.clear();
         StringBuilder preciosTexto = new StringBuilder();
@@ -48,7 +69,12 @@ public class carrito {
         mostrar_precio.setEditable(false);
     }
 
-    // Método para quitar producto del carrito
+    /**
+     * Elimina un producto seleccionado de la lista del carrito.
+     *
+     * @param productos Lista de productos en el carrito.
+     * @param precios   Lista de precios de los productos.
+     */
     private void quitarProducto(ArrayList<String> productos, ArrayList<Double> precios) {
         int selectedIndex = listaProductos.getSelectedIndex();
         if (selectedIndex != -1) {
@@ -60,15 +86,22 @@ public class carrito {
         }
     }
 
-    // Método para abrir la ventana de pagos
+    /**
+     * Abre la ventana de pagos para proceder con la compra.
+     *
+     * @param productos Lista de productos en el carrito.
+     * @param precios   Lista de precios de los productos.
+     */
     private void abrirPagos(ArrayList<String> productos, ArrayList<Double> precios) {
         JFrame pagosFrame = new JFrame("Pago");
         pagosFrame.setContentPane(new pagos(productos, precios).mainPanel);
-        pagosFrame.setSize(600, 400);
+        pagosFrame.setSize(800, 400);
         pagosFrame.setVisible(true);
     }
 
-    // Método para cerrar la ventana del carrito y volver a productos sin abrir una nueva
+    /**
+     * Cierra la ventana del carrito y regresa a la pantalla anterior.
+     */
     private void cerrarVentana() {
         JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(mainPanel);
         if (frame != null) {

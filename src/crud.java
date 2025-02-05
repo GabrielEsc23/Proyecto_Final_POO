@@ -1,8 +1,11 @@
 import javax.swing.*;
 import java.sql.*;
 
+/**
+ * Clase CRUD para la gestión de productos en la base de datos.
+ */
 public class crud {
-    public JPanel mainPanel; // Cambiar acceso para permitir integración con otras clases
+    public JPanel mainPanel; // Panel principal de la interfaz
     private JTextField int_id;
     private JTextField varchar_nombre;
     private JTextField decimal_precio;
@@ -12,13 +15,17 @@ public class crud {
     private JButton eliminarButton;
     private JButton crearButton;
 
-    // Conexión a la base de datos
-    private final String url = "jdbc:mysql://localhost:3306/smart_shop"; // Cambia según tu configuración
-    private final String user = "root"; // Cambia a tu usuario
-    private final String password = ""; // Cambia a tu contraseña
+    // Datos de conexión a la base de datos
+    private final String url = "jdbc:mysql://localhost:3306/smart_shop"; // Modificar según configuración
+    private final String user = "root"; // Usuario de la base de datos
+    private final String password = ""; // Contraseña de la base de datos
 
-    private Runnable actualizarVistaProductos; // Callback para actualizar la vista en productos.java
+    private Runnable actualizarVistaProductos; // Callback para actualizar la vista de productos
 
+    /**
+     * Constructor de la clase CRUD.
+     * Configura los listeners para los botones.
+     */
     public crud() {
         leerButton.addActionListener(e -> leerProducto());
         actualizarButton.addActionListener(e -> actualizarProducto());
@@ -26,11 +33,17 @@ public class crud {
         crearButton.addActionListener(e -> crearProducto());
     }
 
-    // Método para establecer el callback de actualización
+    /**
+     * Establece la función de actualización de la vista de productos.
+     * @param actualizarVistaProductos Función para actualizar la vista.
+     */
     public void setActualizarVistaProductos(Runnable actualizarVistaProductos) {
         this.actualizarVistaProductos = actualizarVistaProductos;
     }
 
+    /**
+     * Lee un producto de la base de datos a partir de su ID.
+     */
     private void leerProducto() {
         String id = int_id.getText();
         if (id.isEmpty()) {
@@ -52,11 +65,13 @@ public class crud {
                 JOptionPane.showMessageDialog(mainPanel, "Producto no encontrado.");
             }
         } catch (SQLException ex) {
-            ex.printStackTrace();
             JOptionPane.showMessageDialog(mainPanel, "Error al leer el producto.");
         }
     }
 
+    /**
+     * Actualiza un producto en la base de datos.
+     */
     private void actualizarProducto() {
         String id = int_id.getText();
         String nombre = varchar_nombre.getText();
@@ -69,10 +84,9 @@ public class crud {
         }
 
         try (Connection con = DriverManager.getConnection(url, user, password);
-             PreparedStatement ps = con.prepareStatement(
-                     "UPDATE productos SET nombre = ?, precio = ?, imagen = ? WHERE id = ?")) {
+             PreparedStatement ps = con.prepareStatement("UPDATE productos SET nombre = ?, precio = ?, imagen = ? WHERE id = ?")) {
             ps.setString(1, nombre);
-            ps.setBigDecimal(2, new java.math.BigDecimal(precio)); // Usamos BigDecimal para el precio
+            ps.setBigDecimal(2, new java.math.BigDecimal(precio));
             ps.setString(3, img);
             ps.setInt(4, Integer.parseInt(id));
 
@@ -80,17 +94,19 @@ public class crud {
             if (rowsUpdated > 0) {
                 JOptionPane.showMessageDialog(mainPanel, "Producto actualizado exitosamente.");
                 if (actualizarVistaProductos != null) {
-                    actualizarVistaProductos.run(); // Actualizar vista
+                    actualizarVistaProductos.run();
                 }
             } else {
                 JOptionPane.showMessageDialog(mainPanel, "No se encontró el producto con el ID proporcionado.");
             }
         } catch (SQLException ex) {
-            ex.printStackTrace();
             JOptionPane.showMessageDialog(mainPanel, "Error al actualizar el producto.");
         }
     }
 
+    /**
+     * Elimina un producto de la base de datos.
+     */
     private void eliminarProducto() {
         String id = int_id.getText();
 
@@ -107,24 +123,24 @@ public class crud {
             if (rowsDeleted > 0) {
                 JOptionPane.showMessageDialog(mainPanel, "Producto eliminado exitosamente.");
                 if (actualizarVistaProductos != null) {
-                    actualizarVistaProductos.run(); // Actualizar vista
+                    actualizarVistaProductos.run();
                 }
             } else {
                 JOptionPane.showMessageDialog(mainPanel, "No se encontró el producto con el ID proporcionado.");
             }
         } catch (SQLException ex) {
-            ex.printStackTrace();
             JOptionPane.showMessageDialog(mainPanel, "Error al eliminar el producto.");
         }
     }
 
+    /**
+     * Crea un nuevo producto en la base de datos.
+     */
     private void crearProducto() {
-        // Obtener los valores de los campos
         String nombre = varchar_nombre.getText();
         String precio = decimal_precio.getText();
         String img = varchar_img.getText();
 
-        // Validación de campos
         if (nombre.isEmpty() || precio.isEmpty() || img.isEmpty()) {
             JOptionPane.showMessageDialog(mainPanel, "Por favor, completa todos los campos.");
             return;
@@ -132,22 +148,20 @@ public class crud {
 
         try (Connection con = DriverManager.getConnection(url, user, password);
              PreparedStatement ps = con.prepareStatement("INSERT INTO productos (nombre, precio, imagen) VALUES (?, ?, ?)")) {
-
             ps.setString(1, nombre);
-            ps.setBigDecimal(2, new java.math.BigDecimal(precio)); // Usamos BigDecimal para el precio
+            ps.setBigDecimal(2, new java.math.BigDecimal(precio));
             ps.setString(3, img);
 
             int filasInsertadas = ps.executeUpdate();
             if (filasInsertadas > 0) {
                 JOptionPane.showMessageDialog(mainPanel, "Producto creado exitosamente.");
                 if (actualizarVistaProductos != null) {
-                    actualizarVistaProductos.run(); // Actualizar vista
+                    actualizarVistaProductos.run();
                 }
             } else {
                 JOptionPane.showMessageDialog(mainPanel, "Error al crear el producto.");
             }
         } catch (SQLException ex) {
-            ex.printStackTrace();
             JOptionPane.showMessageDialog(mainPanel, "Error al conectar con la base de datos.");
         }
     }
