@@ -62,6 +62,8 @@ Smart Shop es una aplicación de compras en línea que permite a los usuarios ag
  **Gestión de productos** para administradores.
  **Generación de facturas en PDF** tras la compra.
  **Base de datos MySQL** para almacenamiento seguro.
+ 
+ ## Imágenes de las interfaces del programa
 
 ## Autor
 - **[Edison Gabriel Escobar Obando]** 
