@@ -64,6 +64,12 @@ Smart Shop es una aplicación de compras en línea que permite a los usuarios ag
  **Base de datos MySQL** para almacenamiento seguro.
  
  ## Vista de la Aplicación
+ ![Login](https://github.com/GabrielEsc23/Proyecto_Final_POO/raw/master/Imagen_Interfaz/Login.png)
+![Catálogo](https://github.com/GabrielEsc23/Proyecto_Final_POO/raw/master/Imagen_Interfaz/Catalogo.png)
+![Carrito](https://github.com/GabrielEsc23/Proyecto_Final_POO/raw/master/Imagen_Interfaz/Carrito.png)
+![Pagos](https://github.com/GabrielEsc23/Proyecto_Final_POO/raw/master/Imagen_Interfaz/Pagos.png)
+![CRUD](https://github.com/GabrielEsc23/Proyecto_Final_POO/raw/master/Imagen_Interfaz/CRUD.png)
+
 
 ## Autor
 - **[Edison Gabriel Escobar Obando]** 
