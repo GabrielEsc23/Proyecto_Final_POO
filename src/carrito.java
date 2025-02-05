@@ -95,7 +95,7 @@ public class carrito {
     private void abrirPagos(ArrayList<String> productos, ArrayList<Double> precios) {
         JFrame pagosFrame = new JFrame("Pago");
         pagosFrame.setContentPane(new pagos(productos, precios).mainPanel);
-        pagosFrame.setSize(800, 400);
+        pagosFrame.setSize(800, 600);
         pagosFrame.setVisible(true);
     }
 

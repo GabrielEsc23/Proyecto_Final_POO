@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7292a758-6c11-422d-bff9-4329254f215d" name="Changes" comment="Commit">
+    <list default="true" id="7292a758-6c11-422d-bff9-4329254f215d" name="Changes" comment="Se le modifíca el tipo de letra y el tamaño">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/carrito.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/carrito.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pagos.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/pagos.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/productos.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/productos.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/carrito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/carrito.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/login.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/login.form" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +103,7 @@
       <workItem from="1738287757336" duration="5051000" />
       <workItem from="1738420325506" duration="8632000" />
       <workItem from="1738553864118" duration="1062000" />
-      <workItem from="1738722996081" duration="4708000" />
+      <workItem from="1738722996081" duration="5330000" />
     </task>
     <task id="LOCAL-00001" summary="Primer commit">
       <option name="closed" value="true" />
@@ -234,7 +233,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738726151614</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Se le modifíca el tipo de letra y el tamaño">
+      <option name="closed" value="true" />
+      <created>1738727937726</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1738727937726</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,6 +260,7 @@
     <MESSAGE value="Agruegue un boton para regresar al carrito desde pagos" />
     <MESSAGE value="Agruegue java docs a las páginas" />
     <MESSAGE value="Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
+    <MESSAGE value="Se le modifíca el tipo de letra y el tamaño" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se le modifíca el tipo de letra y el tamaño" />
   </component>
 </project>
