@@ -74,7 +74,7 @@ Smart Shop es una aplicación de compras en línea que permite a los usuarios ag
 ![Pagos](https://github.com/GabrielEsc23/Proyecto_Final_POO/raw/master/Imagen_Interfaz/Pagos.png)
 ---
 ![CRUD](https://github.com/GabrielEsc23/Proyecto_Final_POO/raw/master/Imagen_Interfaz/CRUD.png)
-
+---
 
 ## Autor
 - **[Edison Gabriel Escobar Obando]** 
