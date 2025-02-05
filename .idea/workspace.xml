@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7292a758-6c11-422d-bff9-4329254f215d" name="Changes" comment="Agruegue un boton para regresar al carrito desde pagos">
+    <list default="true" id="7292a758-6c11-422d-bff9-4329254f215d" name="Changes" comment="Agruegue java docs a las páginas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/carrito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/carrito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/login.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/login.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pagos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pagos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/productos.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/productos.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/productos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/productos.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +101,7 @@
       <workItem from="1738287757336" duration="5051000" />
       <workItem from="1738420325506" duration="8632000" />
       <workItem from="1738553864118" duration="1062000" />
-      <workItem from="1738722996081" duration="900000" />
+      <workItem from="1738722996081" duration="1947000" />
     </task>
     <task id="LOCAL-00001" summary="Primer commit">
       <option name="closed" value="true" />
@@ -213,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738439508317</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Agruegue java docs a las páginas">
+      <option name="closed" value="true" />
+      <created>1738724202163</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1738724202163</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,6 +233,7 @@
     <MESSAGE value="Le agregue un boton para quitar productos en el carrito y cambie los jTextarea por un Jlist" />
     <MESSAGE value="Le agruegue un boton para regresar a la pagina de productos desde el carrito" />
     <MESSAGE value="Agruegue un boton para regresar al carrito desde pagos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Agruegue un boton para regresar al carrito desde pagos" />
+    <MESSAGE value="Agruegue java docs a las páginas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agruegue java docs a las páginas" />
   </component>
 </project>
